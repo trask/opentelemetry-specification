@@ -86,8 +86,6 @@ _Note: this section applies to socket connections visible to instrumentations. I
 
 Socket-level attributes identify peer and host that are directly connected to each other. Since instrumentations may have limited knowledge on network information, instrumentations SHOULD populate such attributes to the best of their knowledge when populate them at all.
 
-`net.sock.family` identifies address family specified when connecting to the socket. For example, it matches `sa_family` field of `sockaddr` structure on [Linux](https://man7.org/linux/man-pages/man0/sys_socket.h.0p.html) and [Windows](https://docs.microsoft.com/windows/win32/api/winsock/ns-winsock-sockaddr).
-
 _Note: Specific structures and methods to obtain socket-level attributes are mentioned here only as examples. Instrumentations would usually use Socket API provided by their environment or sockets implementations._
 
 For IP-based communication, `server.socket.domain` represents either fully qualified domain name of immediate peer and `server.socket.address` to the IP address (or one specific to network family).
@@ -224,7 +222,7 @@ Destination fields capture details about the receiver of a network exchange/pack
 **[1]:** This value may be a host name, a fully qualified domain name, or another host naming format.
 <!-- endsemconv -->
 
-### `network.connection.*` and `network.carrier.*` attributes
+### Network connection and carrier attributes
 
 <!-- semconv network-connection-and-carrier -->
 | Attribute  | Type | Description  | Examples  | Requirement Level |
@@ -272,6 +270,8 @@ Destination fields capture details about the receiver of a network exchange/pack
 | `nrnsa` | 5G NRNSA (New Radio Non-Standalone) |
 | `lte_ca` | LTE CA |
 <!-- endsemconv -->
+
+For `Unix` and `pipe`, since the connection goes over the file system instead of being directly to a known peer, `server.address` is the only attribute that usually makes sense (see description of `server.address` below).
 
 ## General remote service attributes
 
