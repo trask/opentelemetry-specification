@@ -43,7 +43,8 @@ all suitable for direct use in native instrumentation.
 Events are intended to replace Span Events in the long term.
 Span Events will be deprecated to signal that users should prefer Events.
 
-Interoperability between Events and Span Events will be defined in the short term.
+See [OTEP 9999: Span Event deprecation plan](9999-span-event-deprecation-plan.md)
+for more details.
 
 ### SDK
 
