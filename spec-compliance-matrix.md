@@ -29,18 +29,18 @@ language implementation.
 | Get a Tracer with schema_url |  | + | + |  | + |  |  | + |  | + |  |  |
 | Get a Tracer with scope attributes |  |  |  |  | + |  |  | + |  | + |  |  |
 | Associate Tracer with InstrumentationScope |  |  |  |  | + |  |  | + |  |  |  |  |
-| Safe for concurrent calls |  |  |  |  |  |  |  |  |  |  |  |  |
+| Safe for concurrent calls |  | + | + | + | + | + | + | + | + | + | + | + |
 | Shutdown (SDK only required) |  | + | + | + | + | + | + | + | + | + | + | + |
 | ForceFlush (SDK only required) |  | + | + | - | + | + | + | + | + | + | + | + |
 | [Trace / Context interaction](specification/trace/api.md#context-interaction) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
-| Get active Span |  |  |  |  |  |  |  |  |  |  |  |  |
+| Get active Span |  | N/A | + | + | + | + | + | + | + | + | + | + |
 | Set active Span |  | N/A | + | + | + | + | + | + | + | + | + | + |
 | [Tracer](specification/trace/api.md#tracer-operations) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | Create a new Span |  | + | + | + | + | + | + | + | + | + | + | + |
 | Documentation defines adding attributes at span creation as preferred |  |  |  |  | + | + |  | + |  |  | + |  |
 | Get active Span |  | N/A | + | + | + | + | + | + | + | + | + | + |
 | Mark Span active |  | N/A | + | + | + | + | + | + | + | + | + | + |
-| Safe for concurrent calls |  |  |  |  |  |  |  |  |  |  |  |  |
+| Safe for concurrent calls |  | + | + | + | + | + | + | + | + | + | + | + |
 | [SpanContext](specification/trace/api.md#spancontext) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | IsValid |  | + | + | + | + | + | + | + | + | + | + | + |
 | IsRemote |  | + | + | + | + | + | + | + | + | + | + | + |
@@ -58,7 +58,7 @@ language implementation.
 | IsRecording |  | + | + | + | + | + | + | + | + | + | + | + |
 | IsRecording becomes false after End |  | + | + | + | + | + | + | + | + | + | - | + |
 | Set status with StatusCode (Unset, Ok, Error) |  | + | + | + | + | + | + | + | + | + | + | + |
-| Safe for concurrent calls |  |  |  |  |  |  |  |  |  |  |  |  |
+| Safe for concurrent calls |  | + | + | + | + | + | + | + | + | + | + | + |
 | events collection size limit |  | + | + | + | + | + | + | + | + | - | - | + |
 | attribute collection size limit |  | + | + | + | + | + | + | + | + | - | - | + |
 | links collection size limit |  | + | + | + | + | + | + | + | + | - | - | + |
@@ -199,10 +199,10 @@ language implementation.
 | Feature | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 |-------|--------|---|----|---|------|----|------|---|----|---|----|-----|
 | [Declarative Configuration](specification/configuration/README.md#declarative-configuration) 🚧 |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
-| `Parse` a configuration file 🚧 |  |  |  |  |  |  |  |  |  |  |  |  |
-| The `Parse` operation accepts the configuration YAML file format 🚧 |  |  |  |  |  |  |  |  |  |  |  |  |
-| The `Parse` operation performs environment variable substitution 🚧 |  |  |  |  |  |  |  |  |  |  |  |  |
-| `Create` SDK components 🚧 |  |  |  |  |  |  |  |  |  |  |  |  |
+| `Parse` a configuration file 🚧 |  |  | 🧪 |  |  |  |  |  |  |  |  |  |
+| The `Parse` operation accepts the configuration YAML file format 🚧 |  |  | 🧪 |  |  |  |  |  |  |  |  |  |
+| The `Parse` operation performs environment variable substitution 🚧 |  |  | 🧪 |  |  |  |  |  |  |  |  |  |
+| `Create` SDK components 🚧 |  |  | 🧪 |  |  |  |  |  |  |  |  |  |
 
 ## Exporters
 
