@@ -16,18 +16,18 @@ maintainer: "OpenTelemetry Ruby SIG"
 
 features:
   # TracerProvider
-  tracer_provider_create: stable
-  tracer_provider_get_tracer: stable
-  tracer_provider_get_tracer_schema_url: unknown
-  tracer_provider_get_tracer_scope_attributes: unknown
-  tracer_provider_associate_instrumentation_scope: unknown
-  tracer_provider_safe_concurrent: stable
-  tracer_provider_shutdown: stable
-  tracer_provider_force_flush: stable
+  create_tracer_provider: stable
+  get_tracer: stable
+  get_tracer_with_schema_url: unknown
+  get_tracer_with_scope_attributes: unknown
+  associate_tracer_with_instrumentation_scope: unknown
+  safe_for_concurrent_calls: stable
+  shutdown_sdk_only: stable
+  force_flush_sdk_only: stable
   
   # Trace/Context interaction
-  trace_get_active_span: stable
-  trace_set_active_span: stable
+  get_active_span: stable
+  set_active_span: stable
   
   # Tracer
   tracer_create_span: stable

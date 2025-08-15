@@ -24,21 +24,21 @@ language implementation.
 | Feature | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 |-------|--------|---|----|---|------|----|------|---|----|---|----|-----|
 | [TracerProvider](specification/trace/api.md#tracerprovider-operations) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
-| Create TracerProvider |  | + | + |  | + |  |  |  |  |  |  |  |
-| Get a Tracer |  | + | + |  | + |  |  |  |  |  |  |  |
+| Create TracerProvider |  | + | + | + | + | + | + | + | + | + | + | + |
+| Get a Tracer |  | + | + | + | + | + | + | + | + | + | + | + |
 | Get a Tracer with schema_url |  | + | + |  | + |  |  |  |  |  |  |  |
 | Get a Tracer with scope attributes |  | - | - |  | + |  |  |  |  |  |  |  |
 | Associate Tracer with InstrumentationScope |  | - | - |  | + |  |  |  |  |  |  |  |
-| Safe for concurrent calls |  | + | + |  | + |  |  |  |  |  |  |  |
-| Shutdown (SDK only required) |  | + | + |  | + |  |  |  |  |  |  |  |
-| ForceFlush (SDK only required) |  | + | + |  | + |  |  |  |  |  |  |  |
+| Safe for concurrent calls |  | + | + | + | + | + | + | + | + | + | + | + |
+| Shutdown (SDK only required) |  | + | + | + | + | + | + | + | + | + | + | + |
+| ForceFlush (SDK only required) |  | + | + | - | + | + | + | + | + | + | + | + |
 | [Trace / Context interaction](specification/trace/api.md#context-interaction) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
-| Get active Span |  | N/A | + |  | + |  |  |  |  |  |  |  |
-| Set active Span |  | N/A | + |  | + |  |  |  |  |  |  |  |
+| Get active Span |  | N/A | + | + | + | + | + | + | + | + | + | + |
+| Set active Span |  | N/A | + | + | + | + | + | + | + | + | + | + |
 | [Tracer](specification/trace/api.md#tracer-operations) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | Create a new Span |  | + | + |  | + |  |  |  |  |  |  |  |
 | Documentation defines adding attributes at span creation as preferred |  | - | - |  | + |  |  |  |  |  |  |  |
-| Get active Span |  | N/A | + | + | + | + | + | + | + | + | + | + |
+| Get active Span |  | N/A | + | + | + | + | + |  | + |  | + | + |
 | Mark Span active |  | N/A | + |  | + |  |  |  |  |  |  |  |
 | Safe for concurrent calls |  | + | + |  | + |  |  |  |  |  |  |  |
 | [SpanContext](specification/trace/api.md#spancontext) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
@@ -62,7 +62,7 @@ language implementation.
 | events collection size limit |  | + | + |  | + |  |  |  |  |  |  |  |
 | attribute collection size limit |  | + | + |  | + |  |  |  |  |  |  |  |
 | links collection size limit |  | + | + |  | + |  |  |  |  |  |  |  |
-| [SpanProcessor.OnEnding](specification/trace/sdk.md#onending) | X | - | - | - | - | - | - | - | - | - | - | - |
+| [SpanProcessor.OnEnding](specification/trace/sdk.md#onending) | X | - | - | - | - | - | - |  | - |  | - | - |
 | [Span attributes](specification/trace/api.md#set-attributes) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | SetAttribute |  | + | + |  | + |  |  |  |  |  |  |  |
 | Set order preserved | X | + | - |  | + |  |  |  |  |  |  |  |
@@ -113,7 +113,7 @@ language implementation.
 | MeterProvider |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | The API provides a way to set and get a global default `MeterProvider` | X | + | + |  | + |  |  |  |  |  |  |  |
 | It is possible to create any number of `MeterProvider`s | X | + | + |  | + |  |  |  |  |  |  |  |
-| `MeterProvider` provides a way to get a `Meter` |  | + | + | + | + | + | + | + | + | + | + | + |
+| `MeterProvider` provides a way to get a `Meter` |  | + | + | + | + | + | + |  | + |  | + | + |
 | `get_meter` accepts name, `version` and `schema_url` |  | + | + |  | + |  |  |  |  |  |  |  |
 | `get_meter` accepts `attributes` |  | - | - |  | + |  |  |  |  |  |  |  |
 | When an invalid `name` is specified a working `Meter` implementation is returned as a fallback |  | + | + |  | + |  |  |  |  |  |  |  |
