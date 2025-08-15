@@ -118,10 +118,10 @@ features:
   otel_service_name: stable
   otel_log_level: not_supported
   otel_propagators: stable
-  parse_configuration_file: unknown
-  parse_yaml_format: unknown
-  environment_variable_substitution: unknown
-  create_sdk_components: unknown
+  parse_configuration_file: experimental
+  parse_yaml_format: experimental
+  environment_variable_substitution: experimental
+  create_sdk_components: experimental
   opentracing_tracer: unknown
   otlp_http_binary_protobuf_exporter: stable
   otlp_http_json_protobuf_exporter: not_supported
@@ -136,3 +136,7 @@ features:
   opencensus_trace_bridge: stable
   opencensus_metric_bridge: stable
   opentracing_create_shim: unknown
+  safe_for_concurrent_calls: stable
+  get_active_span: stable
+  tracer_safe_concurrent_calls: stable
+  span_safe_concurrent_calls: stable

@@ -136,3 +136,7 @@ features:
   opencensus_trace_bridge: stable
   opencensus_metric_bridge: not_supported
   opentracing_create_shim: unknown
+  safe_for_concurrent_calls: stable
+  get_active_span: stable
+  tracer_safe_concurrent_calls: stable
+  span_safe_concurrent_calls: stable

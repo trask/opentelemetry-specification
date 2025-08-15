@@ -135,3 +135,7 @@ features:
   prometheus_name_sanitization: not_supported
   opencensus_trace_bridge: not_supported
   opencensus_metric_bridge: not_supported
+  safe_for_concurrent_calls: stable
+  get_active_span: stable
+  tracer_safe_concurrent_calls: stable
+  span_safe_concurrent_calls: stable

@@ -134,3 +134,7 @@ features:
   prometheus_metadata_deduplication: not_supported
   prometheus_name_sanitization: stable
   opentracing_create_shim: unknown
+  safe_for_concurrent_calls: stable
+  get_active_span: stable
+  tracer_safe_concurrent_calls: stable
+  span_safe_concurrent_calls: stable
