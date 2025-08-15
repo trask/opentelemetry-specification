@@ -180,12 +180,12 @@ class ComplianceMatrixGenerator:
             # Feature header row (if it has multiple requirements)
             if len(feature.requirements) > 1:
                 spec_indicator = self.get_spec_status_indicator(feature.status)
-                optional_indicator = "X" if feature.optional else ""
+                optional_indicator = "Optional" if feature.optional else ""
                 
                 feature_name = f"[{feature.name}]({feature.spec_url}){spec_indicator}" if feature.spec_url else f"{feature.name}{spec_indicator}"
                 
-                # Language columns for feature header (usually "Optional")
-                lang_cols = [languages[0] if languages else ""] + [""] * (len(languages) - 1) if languages else []
+                # Language columns for feature header show all language names
+                lang_cols = languages if languages else []
                 
                 row = f"| {feature_name} | {optional_indicator} | " + " | ".join(lang_cols) + " |"
                 output.append(row)
