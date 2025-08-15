@@ -1,0 +1,138 @@
+# OpenTelemetry Erlang Implementation Status
+# This file tracks the compliance status of OpenTelemetry Erlang
+# implementation with the specification requirements.
+
+language: "Erlang"
+version: "1.0.0"
+last_updated: "2025-08-15"
+maintainer: "OpenTelemetry Erlang SIG"
+
+# Feature implementation status:
+# - stable: Feature is implemented and stable
+# - experimental: Feature is implemented but experimental  
+# - not_supported: Feature is not implemented
+# - not_applicable: Feature is not applicable to this language
+# - unknown: Implementation status is unknown
+
+features:
+  # TracerProvider
+  tracer_provider_create: stable
+  tracer_provider_get_tracer: stable
+  tracer_provider_get_tracer_schema_url: unknown
+  tracer_provider_get_tracer_scope_attributes: unknown
+  tracer_provider_associate_instrumentation_scope: unknown
+  tracer_provider_safe_concurrent: stable
+  tracer_provider_shutdown: stable
+  tracer_provider_force_flush: stable
+  
+  # Trace/Context interaction
+  trace_get_active_span: stable
+  trace_set_active_span: stable
+  
+  # Tracer
+  tracer_create_span: stable
+  tracer_span_creation_attributes_preferred: unknown
+  tracer_get_active_span: stable
+  tracer_mark_span_active: stable
+  tracer_safe_concurrent: stable
+  
+  # SpanContext
+  span_context_is_valid: stable
+  span_context_is_remote: stable
+  span_context_w3c_trace_context: stable
+  
+  # Span
+  span_create_root: stable
+  span_create_default_parent: stable
+  span_create_parent_context: stable
+  span_no_explicit_parent: stable
+  span_processor_on_start_context: stable
+  span_update_name: stable
+  span_user_timestamp: stable
+  span_end: stable
+  span_end_timestamp: stable
+  span_is_recording: stable
+  span_is_recording_false_after_end: stable
+  span_set_status: stable
+  span_safe_concurrent: stable
+  span_events_size_limit: stable
+  span_attributes_size_limit: stable
+  span_links_size_limit: stable
+  span_processor_on_ending: not_supported
+  
+  # Span attributes
+  span_attributes_set: stable
+  span_attributes_order_preserved: stable
+  span_attributes_string: stable
+  span_attributes_boolean: stable
+  span_attributes_double: stable
+  span_attributes_int64: stable
+  span_attributes_array: stable
+  span_attributes_null_invalid: stable
+  span_attributes_unicode: stable
+  
+  # Span linking
+  span_links_creation: stable
+  span_links_after_creation: not_supported
+  span_links_order_preserved: stable
+  
+  # Span events
+  span_events_add: stable
+  span_events_order_preserved: stable
+  span_events_safe_concurrent: stable
+  
+  # Span exceptions
+  span_exceptions_record: stable
+  span_exceptions_record_extra: stable
+  
+  # Sampling
+  sampling_modify_tracestate: stable
+  sampling_full_parent_context: stable
+  sampling_jaeger_remote: stable
+  sampling_new_span_id_non_recording: stable
+  sampling_id_generators: stable
+  sampling_span_limits: stable
+  sampling_force_flush_spec: stable
+  sampling_attribute_limits: not_supported
+  sampling_instrumentation_scope_readable: stable
+  sampling_w3c_trace_context_level2: not_supported
+  sampling_traceid_ratio_th_field: not_supported
+  sampling_composite_sampler: not_supported
+  
+  # Baggage
+  baggage_basic_support: stable
+  baggage_official_header: stable
+  
+  # MeterProvider
+  meter_provider_global: stable
+  meter_provider_multiple: stable
+  meter_provider_get_meter: stable
+  meter_provider_get_meter_version_schema: unknown
+  meter_provider_get_meter_attributes: unknown
+  meter_provider_invalid_name_fallback: stable
+  meter_provider_fallback_name_preserved: unknown
+  meter_provider_associate_instrumentation_scope: unknown
+  
+  # Instruments
+  instruments_counter: stable
+  instruments_async_counter: stable
+  instruments_histogram: stable
+  instruments_async_gauge: stable
+  instruments_gauge: not_supported
+  instruments_updown_counter: stable
+  instruments_async_updown_counter: stable
+  
+  # Logs
+  logs_logger_provider_get: not_supported
+  logs_logger_provider_get_attributes: not_supported
+  logs_logger_provider_shutdown: not_supported
+  logs_logger_provider_force_flush: not_supported
+  logs_logger_emit: not_supported
+  logs_simple_processor: not_supported
+  logs_batch_processor: not_supported
+  logs_custom_processor: not_supported
+  logs_otlp_grpc_exporter: not_supported
+  logs_otlp_http_exporter: not_supported
+  logs_otlp_file_exporter: not_supported
+  logs_custom_exporter: not_supported
+  logs_trace_context_injection: not_supported

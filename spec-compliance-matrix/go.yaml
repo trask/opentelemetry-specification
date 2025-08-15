@@ -1,0 +1,191 @@
+# Go Language Implementation Status for OpenTelemetry
+language: "Go"
+version: "1.0.0"
+last_updated: "2025-08-15"
+
+# Trace Features
+features:
+  # TracerProvider
+  create_tracer_provider: "stable"
+  get_tracer: "stable"
+  get_tracer_with_schema_url: "stable"
+  get_tracer_with_scope_attributes: "not_supported"
+  associate_tracer_with_instrumentation_scope: "not_supported"
+  safe_for_concurrent_calls: "stable"
+  shutdown_sdk_only: "stable"
+  force_flush_sdk_only: "stable"
+  
+  # Trace / Context interaction
+  get_active_span: "not_applicable"
+  set_active_span: "not_applicable"
+  
+  # Tracer
+  create_new_span: "stable"
+  documentation_adding_attributes_preferred: "not_supported"
+  tracer_get_active_span: "not_applicable"
+  mark_span_active: "not_applicable"
+  tracer_safe_concurrent_calls: "stable"
+  
+  # SpanContext
+  is_valid: "stable"
+  is_remote: "stable"
+  w3c_tracecontext_spec: "stable"
+  
+  # Span
+  create_root_span: "stable"
+  create_with_default_parent: "not_applicable"
+  create_with_parent_from_context: "stable"
+  no_explicit_parent_allowed: "stable"
+  span_processor_onstart_receives_parent_context: "stable"
+  update_name: "stable"
+  user_defined_start_timestamp: "stable"
+  end: "stable"
+  end_with_timestamp: "stable"
+  is_recording: "stable"
+  is_recording_false_after_end: "stable"
+  set_status_with_status_code: "stable"
+  span_safe_concurrent_calls: "stable"
+  events_collection_size_limit: "stable"
+  attribute_collection_size_limit: "stable"
+  links_collection_size_limit: "stable"
+  span_processor_on_ending: "not_supported"
+  
+  # Span attributes
+  set_attribute: "stable"
+  set_order_preserved: "stable"
+  string_type: "stable"
+  boolean_type: "stable"
+  double_floating_point_type: "stable"
+  signed_int64_type: "stable"
+  array_of_primitives: "stable"
+  null_values_documented_invalid: "stable"
+  unicode_support: "stable"
+  
+  # Span linking
+  links_on_span_creation: "stable"
+  links_after_span_creation: "stable"
+  links_order_preserved: "stable"
+  
+  # Span events
+  add_event: "stable"
+  add_order_preserved: "stable"
+  events_safe_concurrent_calls: "stable"
+  
+  # Span exceptions
+  record_exception: "not_supported"
+  record_exception_with_extra_parameters: "not_supported"
+  
+  # Sampling
+  samplers_modify_tracestate: "stable"
+  should_sample_gets_full_parent_context: "stable"
+  sampler_jaeger_remote_sampler: "stable"
+  new_span_id_for_non_recording_spans: "stable"
+  id_generators: "stable"
+  span_limits: "stable"
+  builtin_span_processors_implement_force_flush: "not_supported"
+  attribute_limits: "not_supported"
+  fetch_instrumentation_scope_from_readable_span: "not_supported"
+  support_w3c_trace_context_level2_randomness: "not_supported"
+  traceid_ratio_based_sampler_th_field: "not_supported"
+  composite_sampler_and_composable_samplers: "not_supported"
+  
+  # Baggage
+  basic_support: "stable"
+  use_official_header_name: "stable"
+  
+  # Metrics
+  global_default_meter_provider: "stable"
+  create_multiple_meter_providers: "stable"
+  meter_provider_get_meter: "stable"
+  get_meter_accepts_name_version_schema_url: "stable"
+  get_meter_accepts_attributes: "not_supported"
+  invalid_name_fallback_meter: "stable"
+  fallback_meter_name_property: "not_supported"
+  associate_meter_with_instrumentation_scope: "not_supported"
+  
+  # Instruments
+  counter_instrument: "stable"
+  asynchronous_counter_instrument: "stable"
+  histogram_instrument: "stable"
+  asynchronous_gauge_instrument: "stable"
+  gauge_instrument: "not_supported"
+  updown_counter_instrument: "stable"
+  asynchronous_updown_counter_instrument: "stable"
+  
+  # Logs
+  logger_provider_get_logger: "not_supported"
+  logger_provider_get_logger_accepts_attributes: "not_supported"
+  logger_provider_shutdown: "not_supported"
+  logger_provider_force_flush: "not_supported"
+  logger_emit_log_record: "not_supported"
+  simple_log_record_processor: "not_supported"
+  batch_log_record_processor: "not_supported"
+  custom_log_record_processor: "not_supported"
+  otlp_grpc_exporter: "not_supported"
+  otlp_http_exporter: "not_supported"
+  otlp_file_exporter: "not_supported"
+  custom_log_record_exporter: "not_supported"
+  trace_context_injection: "not_supported"
+  
+  # Resource
+  create_from_attributes: "stable"
+  create_empty: "stable"
+  merge_v2: "stable"
+  retrieve_attributes: "stable"
+  default_value_service_name: "stable"
+  resource_detector_interface: "stable"
+  resource_detectors_populate_schema_url: "stable"
+  
+  # Context Propagation
+  create_context_key: "stable"
+  get_value_from_context: "stable"
+  set_value_for_context: "stable"
+  attach_context: "stable"
+  detach_context: "stable"
+  get_current_context: "stable"
+  composite_propagator: "stable"
+  global_propagator: "stable"
+  trace_context_propagator: "stable"
+  b3_propagator: "stable"
+  jaeger_propagator: "stable"
+  ot_propagator: "stable"
+  opencensus_binary_propagator: "stable"
+  textmap_propagator: "stable"
+  
+  # Environment Variables
+  otel_sdk_disabled: "not_supported"
+  otel_resource_attributes: "stable"
+  otel_service_name: "stable"
+  otel_log_level: "not_supported"
+  otel_propagators: "not_supported"
+  
+  # Declarative Configuration
+  parse_configuration_file: "not_supported"
+  parse_yaml_format: "not_supported"
+  environment_variable_substitution: "not_supported"
+  create_sdk_components: "not_supported"
+  
+  # Exporters
+  otlp_grpc_exporter: "stable"
+  otlp_http_binary_protobuf_exporter: "stable"
+  otlp_http_json_protobuf_exporter: "stable"
+  otlp_http_gzip_content_encoding: "stable"
+  zipkin_v1_json: "not_supported"
+  zipkin_v1_thrift: "not_supported"
+  zipkin_v2_json: "stable"
+  zipkin_v2_protobuf: "not_supported"
+  prometheus_metadata_deduplication: "stable"
+  prometheus_name_sanitization: "stable"
+  
+  # Compatibility
+  opencensus_trace_bridge: "stable"
+  opencensus_metric_bridge: "stable"
+  opentracing_create_shim: "not_supported"
+  opentracing_tracer: "not_supported"
+  opentracing_span: "not_supported"
+
+documentation:
+  project_status_url: "https://github.com/open-telemetry/opentelemetry-go"
+  
+releases:
+  latest_stable: "1.28.0"

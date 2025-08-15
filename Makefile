@@ -14,6 +14,18 @@ SEMCONVGEN_VERSION=0.17.0
 .PHONY: all
 all: install-tools markdownlint markdown-link-check misspell
 
+# Generate compliance matrix from YAML files
+.PHONY: compliance-matrix
+compliance-matrix:
+	@echo "Regenerating spec compliance matrix from YAML files..."
+	@python tools/compliance_matrix_generator.py --spec-file spec-requirements.yaml --lang-dir spec-compliance-matrix --output-format markdown --output spec-compliance-matrix.md
+
+# Validate compliance YAML files
+.PHONY: validate-compliance
+validate-compliance:
+	@echo "Validating compliance YAML files..."
+	@python tools/validate_compliance_files.py --spec-file spec-requirements.yaml --lang-dir spec-compliance-matrix
+
 $(MISSPELL):
 	cd $(TOOLS_DIR) && go build -o $(MISSPELL_BINARY) github.com/client9/misspell/cmd/misspell
 
