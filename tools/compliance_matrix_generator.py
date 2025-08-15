@@ -307,7 +307,7 @@ def main():
     parser = argparse.ArgumentParser(description='Generate OpenTelemetry compliance matrices')
     parser.add_argument('--spec-file', type=Path, default='spec-requirements.yaml',
                        help='Path to spec requirements YAML file')
-    parser.add_argument('--lang-dir', type=Path, default='language-implementations',
+    parser.add_argument('--lang-dir', type=Path, default='spec-compliance-matrix',
                        help='Directory containing language implementation YAML files')
     parser.add_argument('--output-format', choices=['markdown', 'html', 'json'], default='markdown',
                        help='Output format')

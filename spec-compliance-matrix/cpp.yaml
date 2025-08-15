@@ -1,19 +1,138 @@
-# OpenTelemetry C++ Implementation Status
-language: "C++"
-version: "1.0.0"
-last_updated: "2025-08-15"
-
+language: C++
+version: 1.0.0
+last_updated: '2025-08-15'
 features:
-  # TracerProvider
   create_tracer_provider: stable
   get_tracer: stable
-  get_tracer_with_schema_url: unknown
-  get_tracer_with_scope_attributes: unknown
+  get_tracer_with_schema_url: stable
+  get_tracer_with_scope_attributes: stable
   associate_tracer_with_instrumentation_scope: unknown
-  safe_for_concurrent_calls: stable
+  events_safe_concurrent_calls: stable
   shutdown_sdk_only: stable
   force_flush_sdk_only: stable
-  
-  # Trace/Context interaction
-  get_active_span: stable
+  tracer_get_active_span: stable
   set_active_span: stable
+  create_new_span: stable
+  documentation_adding_attributes_preferred: unknown
+  mark_span_active: stable
+  is_valid: stable
+  is_remote: stable
+  w3c_tracecontext_spec: stable
+  create_root_span: stable
+  create_with_default_parent: stable
+  create_with_parent_from_context: stable
+  no_explicit_parent_allowed: unknown
+  span_processor_onstart_receives_parent_context: not_supported
+  update_name: stable
+  user_defined_start_timestamp: stable
+  end: stable
+  end_with_timestamp: stable
+  is_recording: stable
+  is_recording_false_after_end: stable
+  set_status_with_status_code: stable
+  events_collection_size_limit: not_supported
+  attribute_collection_size_limit: not_supported
+  links_collection_size_limit: not_supported
+  span_processor_on_ending: not_supported
+  set_attribute: stable
+  set_order_preserved: stable
+  string_type: stable
+  boolean_type: stable
+  double_floating_point_type: stable
+  signed_int64_type: stable
+  array_of_primitives: stable
+  null_values_documented_invalid: stable
+  unicode_support: stable
+  links_on_span_creation: stable
+  links_after_span_creation: stable
+  links_order_preserved: stable
+  add_event: stable
+  add_order_preserved: stable
+  record_exception: not_supported
+  record_exception_with_extra_parameters: not_supported
+  samplers_modify_tracestate: stable
+  should_sample_gets_full_parent_context: stable
+  sampler_jaeger_remote_sampler: unknown
+  new_span_id_for_non_recording_spans: stable
+  id_generators: stable
+  span_limits: not_supported
+  builtin_span_processors_implement_force_flush: stable
+  attribute_limits: unknown
+  fetch_instrumentation_scope_from_readable_span: unknown
+  support_w3c_trace_context_level2_randomness: unknown
+  traceid_ratio_based_sampler_th_field: unknown
+  composite_sampler_and_composable_samplers: unknown
+  basic_support: stable
+  use_official_header_name: stable
+  global_default_meter_provider: stable
+  create_multiple_meter_providers: stable
+  meter_provider_get_meter: stable
+  get_meter_accepts_name_version_schema_url: stable
+  get_meter_accepts_attributes: stable
+  invalid_name_fallback_meter: stable
+  fallback_meter_name_property: not_supported
+  associate_meter_with_instrumentation_scope: stable
+  counter_instrument: stable
+  asynchronous_counter_instrument: stable
+  histogram_instrument: stable
+  asynchronous_gauge_instrument: stable
+  gauge_instrument: not_supported
+  updown_counter_instrument: stable
+  asynchronous_updown_counter_instrument: stable
+  logger_provider_get_logger: stable
+  logger_provider_get_logger_accepts_attributes: stable
+  logger_provider_shutdown: stable
+  logger_provider_force_flush: stable
+  logger_emit_log_record: stable
+  simple_log_record_processor: stable
+  batch_log_record_processor: stable
+  custom_log_record_processor: stable
+  otlp_grpc_exporter: stable
+  otlp_http_exporter: stable
+  otlp_file_exporter: stable
+  custom_log_record_exporter: stable
+  trace_context_injection: stable
+  create_from_attributes: stable
+  create_empty: stable
+  merge_v2: stable
+  retrieve_attributes: stable
+  default_value_service_name: stable
+  resource_detector_interface: stable
+  resource_detectors_populate_schema_url: unknown
+  create_context_key: stable
+  get_value_from_context: stable
+  set_value_for_context: stable
+  attach_context: stable
+  detach_context: stable
+  get_current_context: stable
+  composite_propagator: stable
+  global_propagator: stable
+  trace_context_propagator: stable
+  b3_propagator: stable
+  jaeger_propagator: stable
+  ot_propagator: unknown
+  opencensus_binary_propagator: unknown
+  textmap_propagator: stable
+  otel_sdk_disabled: not_supported
+  otel_resource_attributes: stable
+  otel_service_name: stable
+  otel_log_level: not_supported
+  otel_propagators: not_supported
+  parse_configuration_file: unknown
+  parse_yaml_format: unknown
+  environment_variable_substitution: unknown
+  create_sdk_components: unknown
+  opentracing_tracer: unknown
+  otlp_http_binary_protobuf_exporter: stable
+  otlp_http_json_protobuf_exporter: stable
+  otlp_http_gzip_content_encoding: not_supported
+  opentracing_span: unknown
+  zipkin_v1_json: not_supported
+  zipkin_v1_thrift: not_supported
+  zipkin_v2_json: stable
+  zipkin_v2_protobuf: not_supported
+  prometheus_metadata_deduplication: not_supported
+  prometheus_name_sanitization: stable
+  opencensus_trace_bridge: not_supported
+  opencensus_metric_bridge: not_supported
+  opentracing_create_shim: unknown

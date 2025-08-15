@@ -1,138 +1,136 @@
-# OpenTelemetry Swift Implementation Status
-# This file tracks the compliance status of OpenTelemetry Swift
-# implementation with the specification requirements.
-
-language: "Swift"
-version: "1.0.0"
-last_updated: "2025-08-15"
-maintainer: "OpenTelemetry Swift SIG"
-
-# Feature implementation status:
-# - stable: Feature is implemented and stable
-# - experimental: Feature is implemented but experimental  
-# - not_supported: Feature is not implemented
-# - not_applicable: Feature is not applicable to this language
-# - unknown: Implementation status is unknown
-
+language: Swift
+version: 1.0.0
+last_updated: '2025-08-15'
 features:
-  # TracerProvider
   create_tracer_provider: stable
   get_tracer: stable
   get_tracer_with_schema_url: unknown
   get_tracer_with_scope_attributes: unknown
   associate_tracer_with_instrumentation_scope: unknown
-  safe_for_concurrent_calls: stable
+  events_safe_concurrent_calls: stable
   shutdown_sdk_only: stable
   force_flush_sdk_only: stable
-  
-  # Trace/Context interaction
-  get_active_span: stable
-  set_active_span: stable
-  
-  # Tracer
-  tracer_create_span: stable
-  tracer_span_creation_attributes_preferred: unknown
   tracer_get_active_span: stable
-  tracer_mark_span_active: stable
-  tracer_safe_concurrent: stable
-  
-  # SpanContext
-  span_context_is_valid: stable
-  span_context_is_remote: stable
-  span_context_w3c_trace_context: stable
-  
-  # Span
-  span_create_root: stable
-  span_create_default_parent: stable
-  span_create_parent_context: stable
-  span_no_explicit_parent: stable
-  span_processor_on_start_context: stable
-  span_update_name: stable
-  span_user_timestamp: stable
-  span_end: stable
-  span_end_timestamp: stable
-  span_is_recording: stable
-  span_is_recording_false_after_end: stable
-  span_set_status: stable
-  span_safe_concurrent: stable
-  span_events_size_limit: stable
-  span_attributes_size_limit: stable
-  span_links_size_limit: stable
+  set_active_span: stable
+  create_new_span: stable
+  documentation_adding_attributes_preferred: unknown
+  mark_span_active: stable
+  is_valid: stable
+  is_remote: stable
+  w3c_tracecontext_spec: stable
+  create_root_span: stable
+  create_with_default_parent: stable
+  create_with_parent_from_context: stable
+  no_explicit_parent_allowed: unknown
+  span_processor_onstart_receives_parent_context: stable
+  update_name: stable
+  user_defined_start_timestamp: stable
+  end: stable
+  end_with_timestamp: stable
+  is_recording: stable
+  is_recording_false_after_end: stable
+  set_status_with_status_code: stable
+  events_collection_size_limit: stable
+  attribute_collection_size_limit: stable
+  links_collection_size_limit: stable
   span_processor_on_ending: not_supported
-  
-  # Span attributes
-  span_attributes_set: stable
-  span_attributes_order_preserved: stable
-  span_attributes_string: stable
-  span_attributes_boolean: stable
-  span_attributes_double: stable
-  span_attributes_int64: stable
-  span_attributes_array: stable
-  span_attributes_null_invalid: stable
-  span_attributes_unicode: stable
-  
-  # Span linking
-  span_links_creation: stable
-  span_links_after_creation: stable
-  span_links_order_preserved: stable
-  
-  # Span events
-  span_events_add: stable
-  span_events_order_preserved: stable
-  span_events_safe_concurrent: stable
-  
-  # Span exceptions
-  span_exceptions_record: stable
-  span_exceptions_record_extra: stable
-  
-  # Sampling
-  sampling_modify_tracestate: stable
-  sampling_full_parent_context: stable
-  sampling_jaeger_remote: stable
-  sampling_new_span_id_non_recording: stable
-  sampling_id_generators: stable
-  sampling_span_limits: stable
-  sampling_force_flush_spec: stable
-  sampling_attribute_limits: stable
-  sampling_instrumentation_scope_readable: stable
-  sampling_w3c_trace_context_level2: not_supported
-  sampling_traceid_ratio_th_field: not_supported
-  sampling_composite_sampler: not_supported
-  
-  # Baggage
-  baggage_basic_support: stable
-  baggage_official_header: stable
-  
-  # MeterProvider
-  meter_provider_global: stable
-  meter_provider_multiple: stable
-  meter_provider_get_meter: stable
-  meter_provider_get_meter_version_schema: unknown
-  meter_provider_get_meter_attributes: unknown
-  meter_provider_invalid_name_fallback: stable
-  meter_provider_fallback_name_preserved: unknown
-  meter_provider_associate_instrumentation_scope: unknown
-  
-  # Instruments
-  instruments_counter: stable
-  instruments_async_counter: stable
-  instruments_histogram: stable
-  instruments_async_gauge: stable
-  instruments_gauge: not_supported
-  instruments_updown_counter: stable
-  instruments_async_updown_counter: stable
-  
-  # Logs
-  logs_logger_provider_get: not_supported
-  logs_logger_provider_get_attributes: not_supported
-  logs_logger_provider_shutdown: not_supported
-  logs_logger_provider_force_flush: not_supported
-  logs_logger_emit: not_supported
-  logs_simple_processor: not_supported
-  logs_batch_processor: not_supported
-  logs_custom_processor: not_supported
-  logs_otlp_grpc_exporter: not_supported
-  logs_otlp_http_exporter: not_supported
-  logs_otlp_file_exporter: not_supported
-  logs_custom_exporter: not_supported
-  logs_trace_context_injection: not_supported
+  set_attribute: stable
+  set_order_preserved: stable
+  string_type: stable
+  boolean_type: stable
+  double_floating_point_type: stable
+  signed_int64_type: stable
+  array_of_primitives: stable
+  null_values_documented_invalid: not_applicable
+  unicode_support: stable
+  links_on_span_creation: unknown
+  links_after_span_creation: unknown
+  links_order_preserved: unknown
+  add_event: stable
+  add_order_preserved: stable
+  record_exception: not_supported
+  record_exception_with_extra_parameters: not_supported
+  samplers_modify_tracestate: stable
+  should_sample_gets_full_parent_context: stable
+  sampler_jaeger_remote_sampler: unknown
+  new_span_id_for_non_recording_spans: stable
+  id_generators: stable
+  span_limits: stable
+  builtin_span_processors_implement_force_flush: unknown
+  attribute_limits: unknown
+  fetch_instrumentation_scope_from_readable_span: unknown
+  support_w3c_trace_context_level2_randomness: unknown
+  traceid_ratio_based_sampler_th_field: unknown
+  composite_sampler_and_composable_samplers: unknown
+  basic_support: stable
+  use_official_header_name: stable
+  global_default_meter_provider: unknown
+  create_multiple_meter_providers: unknown
+  meter_provider_get_meter: unknown
+  get_meter_accepts_name_version_schema_url: unknown
+  get_meter_accepts_attributes: unknown
+  invalid_name_fallback_meter: unknown
+  fallback_meter_name_property: unknown
+  associate_meter_with_instrumentation_scope: unknown
+  counter_instrument: unknown
+  asynchronous_counter_instrument: unknown
+  histogram_instrument: unknown
+  asynchronous_gauge_instrument: unknown
+  gauge_instrument: unknown
+  updown_counter_instrument: unknown
+  asynchronous_updown_counter_instrument: unknown
+  logger_provider_get_logger: unknown
+  logger_provider_get_logger_accepts_attributes: unknown
+  logger_provider_shutdown: unknown
+  logger_provider_force_flush: unknown
+  logger_emit_log_record: unknown
+  simple_log_record_processor: unknown
+  batch_log_record_processor: unknown
+  custom_log_record_processor: unknown
+  otlp_grpc_exporter: stable
+  otlp_http_exporter: unknown
+  otlp_file_exporter: unknown
+  custom_log_record_exporter: unknown
+  trace_context_injection: unknown
+  create_from_attributes: stable
+  create_empty: stable
+  merge_v2: unknown
+  retrieve_attributes: stable
+  default_value_service_name: unknown
+  resource_detector_interface: stable
+  resource_detectors_populate_schema_url: unknown
+  create_context_key: stable
+  get_value_from_context: stable
+  set_value_for_context: stable
+  attach_context: not_supported
+  detach_context: not_supported
+  get_current_context: stable
+  composite_propagator: stable
+  global_propagator: stable
+  trace_context_propagator: stable
+  b3_propagator: stable
+  jaeger_propagator: stable
+  ot_propagator: unknown
+  opencensus_binary_propagator: unknown
+  textmap_propagator: unknown
+  otel_sdk_disabled: not_supported
+  otel_resource_attributes: not_supported
+  otel_service_name: unknown
+  otel_log_level: not_supported
+  otel_propagators: not_supported
+  parse_configuration_file: unknown
+  parse_yaml_format: unknown
+  environment_variable_substitution: unknown
+  create_sdk_components: unknown
+  opentracing_tracer: unknown
+  otlp_http_binary_protobuf_exporter: not_supported
+  otlp_http_json_protobuf_exporter: not_supported
+  otlp_http_gzip_content_encoding: not_supported
+  opentracing_span: unknown
+  zipkin_v1_json: not_supported
+  zipkin_v1_thrift: not_supported
+  zipkin_v2_json: stable
+  zipkin_v2_protobuf: not_supported
+  prometheus_metadata_deduplication: not_supported
+  prometheus_name_sanitization: stable
+  opentracing_create_shim: unknown
