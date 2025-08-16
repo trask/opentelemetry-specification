@@ -23,7 +23,7 @@ language implementation.
 
 | Feature | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 |-------|--------|---|----|---|------|----|------|---|----|---|----|-----|
-| [TracerProvider](specification/trace/api.md#tracerprovider-operations) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [TracerProvider](specification/trace/api.md#tracerprovider-operations) | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | Create TracerProvider |  | + | + | + | + | + | + | + | + | + | + | + |
 | Get a Tracer |  | + | + | + | + | + | + | + | + | + | + | + |
 | Get a Tracer with schema_url |  | + | + |  | + |  |  | + |  | + |  |  |
@@ -32,20 +32,20 @@ language implementation.
 | Safe for concurrent calls |  | + | + | + | + | + | + | + | + | + | + | + |
 | Shutdown (SDK only required) |  | + | + | + | + | + | + | + | + | + | + | + |
 | ForceFlush (SDK only required) |  | + | + | - | + | + | + | + | + | + | + | + |
-| [Trace / Context interaction](specification/trace/api.md#context-interaction) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [Trace / Context interaction](specification/trace/api.md#context-interaction) | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | Get active Span |  | N/A | + | + | + | + | + | + | + | + | + | + |
 | Set active Span |  | N/A | + | + | + | + | + | + | + | + | + | + |
-| [Tracer](specification/trace/api.md#tracer-operations) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [Tracer](specification/trace/api.md#tracer-operations) | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | Create a new Span |  | + | + | + | + | + | + | + | + | + | + | + |
 | Documentation defines adding attributes at span creation as preferred |  |  |  |  | + | + |  | + |  |  | + |  |
 | Get active Span |  | N/A | + | + | + | + | + | + | + | + | + | + |
 | Mark Span active |  | N/A | + | + | + | + | + | + | + | + | + | + |
 | Safe for concurrent calls |  | + | + | + | + | + | + | + | + | + | + | + |
-| [SpanContext](specification/trace/api.md#spancontext) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [SpanContext](specification/trace/api.md#spancontext) | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | IsValid |  | + | + | + | + | + | + | + | + | + | + | + |
 | IsRemote |  | + | + | + | + | + | + | + | + | + | + | + |
 | Conforms to the W3C TraceContext spec |  | + | + | + | + | + | + | + | + | + | + | + |
-| [Span](specification/trace/api.md#span) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [Span](specification/trace/api.md#span) | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | Create root span |  | + | + | + | + | + | + | + | + | + | + | + |
 | Create with default parent (active span) |  | N/A | + | + | + | + | + | + | + | + | + | + |
 | Create with parent from Context |  | + | + | + | + | + | + | + | + | + | + | + |
@@ -63,7 +63,7 @@ language implementation.
 | attribute collection size limit |  | + | + | + | + | + | + | + | + | - | - | + |
 | links collection size limit |  | + | + | + | + | + | + | + | + | - | - | + |
 | [SpanProcessor.OnEnding](specification/trace/sdk.md#onending) | X | - | - | - | - | - | - | - | - | - | - | - |
-| [Span attributes](specification/trace/api.md#set-attributes) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [Span attributes](specification/trace/api.md#set-attributes) | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | SetAttribute |  | + | + | + | + | + | + | + | + | + | + | + |
 | Set order preserved | X | + | - | + | + | + | + | + | + | + | + | + |
 | String type |  | + | + | + | + | + | + | + | + | + | + | + |
@@ -73,18 +73,18 @@ language implementation.
 | Array of primitives (homogeneous) |  | + | + | + | + | + | + | + | + | + | + | + |
 | `null` values documented as invalid/undefined |  | + | + | + | + | + | N/A | + |  | + |  | N/A |
 | Unicode support for keys and string values |  | + | + | + | + | + | + | + | + | + | + | + |
-| [Span linking](specification/trace/api.md#specifying-links) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [Span linking](specification/trace/api.md#specifying-links) | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | Links can be recorded on span creation |  | + | + |  | + | + | + | + | + | + | + |  |
 | Links can be recorded after span creation |  | + |  |  | + |  |  |  |  | + | + |  |
 | Links order is preserved |  | + | + |  | + | + | + | + | + | + | + |  |
-| [Span events](specification/trace/api.md#add-events) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [Span events](specification/trace/api.md#add-events) | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | AddEvent |  | + | + | + | + | + | + | + | + | + | + | + |
 | Add order preserved |  | + | + | + | + | + | + | + | + | + | + | + |
 | Safe for concurrent calls |  | + | + | + | + | + | + | + | + | + | + | + |
-| [Span exceptions](specification/trace/api.md#record-exception) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [Span exceptions](specification/trace/api.md#record-exception) | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | RecordException |  | - | + | + | + | + | + | + | + | - | + | - |
 | RecordException with extra parameters |  | - | + | + | + | + | + | + | + | - | + | - |
-| [Sampling](specification/trace/sdk.md#sampling) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [Sampling](specification/trace/sdk.md#sampling) | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | Allow samplers to modify tracestate |  | + | + |  | + | + | + | + | + | + | + | + |
 | ShouldSample gets full parent Context |  | + | + | + | + | + | + | + | + | + | - | + |
 | Sampler: JaegerRemoteSampler |  | + | + |  |  |  |  |  | + |  |  |  |
@@ -102,7 +102,7 @@ language implementation.
 
 | Feature | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 |-------|--------|---|----|---|------|----|------|---|----|---|----|-----|
-| Baggage Basic Support |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| Baggage Basic Support | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | Basic support |  | + | + | + | + | + | + | + | + | + | + | + |
 | Use official header name `baggage` |  | + | + | + | + | + | + | + | + | + | + | + |
 
@@ -110,7 +110,7 @@ language implementation.
 
 | Feature | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 |-------|--------|---|----|---|------|----|------|---|----|---|----|-----|
-| MeterProvider |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| MeterProvider | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | The API provides a way to set and get a global default `MeterProvider` | X | + | + | + | + |  | + | + | + | + | - |  |
 | It is possible to create any number of `MeterProvider`s | X | + | + | + | + |  | + | + | + | + | + |  |
 | `MeterProvider` provides a way to get a `Meter` |  | + | + | + | + |  | + | + | + | + | - |  |
@@ -119,7 +119,7 @@ language implementation.
 | When an invalid `name` is specified a working `Meter` implementation is returned as a fallback |  | + | + | + | + |  | + |  | + | + | - |  |
 | The fallback `Meter` `name` property keeps its original invalid value | X | - | - | + | + |  | + |  | + | - | - |  |
 | Associate `Meter` with `InstrumentationScope` |  |  | + | + | + |  | + |  | + | + |  |  |
-| Instruments |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| Instruments | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | `Counter` instrument is supported |  | + | + | + | + |  | + | + | + | + | + |  |
 | `AsynchronousCounter` instrument is supported |  | + | + | + | + |  | + | + | + | + | + |  |
 | `Histogram` instrument is supported |  | + | + | + | + |  | + | + | + | + | + |  |
@@ -132,17 +132,17 @@ language implementation.
 
 | Feature | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 |-------|--------|---|----|---|------|----|------|---|----|---|----|-----|
-| [LoggerProvider](specification/logs/sdk.md) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [LoggerProvider](specification/logs/sdk.md) | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | LoggerProvider.Get Logger |  |  | + |  | + |  |  | + |  | + | - |  |
 | LoggerProvider.Get Logger accepts attributes |  |  |  |  | + |  |  | + |  | + |  |  |
 | LoggerProvider.Shutdown |  |  | + |  | + |  |  | + |  | + | - |  |
 | LoggerProvider.ForceFlush |  |  | + |  | + |  |  | + |  | + | - |  |
 | Logger.Emit(LogRecord) |  |  | + |  | + |  |  | + |  | + | - |  |
-| LogRecord Processors |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| LogRecord Processors | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | SimpleLogRecordProcessor |  |  | + |  | + |  |  | + |  | + |  |  |
 | BatchLogRecordProcessor |  |  | + |  | + |  |  | + |  | + |  |  |
 | Can plug custom LogRecordProcessor |  |  | + |  | + |  |  | + |  | + |  |  |
-| LogRecord Exporters |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| LogRecord Exporters | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | OTLP/gRPC exporter |  | + | + | + | + |  | + | + | + | + | + | + |
 | OTLP/HTTP exporter |  |  | + |  | + |  |  | + |  | + | + |  |
 | OTLP File exporter |  |  | - |  | - |  |  |  |  | + | - |  |
@@ -153,7 +153,7 @@ language implementation.
 
 | Feature | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 |-------|--------|---|----|---|------|----|------|---|----|---|----|-----|
-| Resource Operations |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| Resource Operations | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | Create from Attributes |  | + | + | + | + | + | + | + | + | + | + | + |
 | Create empty |  | + | + | + | + | + | + | + | + | + | + | + |
 | [Merge (v2)](specification/resource/sdk.md#merge) |  | + | + |  | + | + | + | + | + | + | + |  |
@@ -166,14 +166,14 @@ language implementation.
 
 | Feature | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 |-------|--------|---|----|---|------|----|------|---|----|---|----|-----|
-| Context Operations |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| Context Operations | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | Create Context Key |  | + | + | + | + | + | + | + | + | + | + | + |
 | Get value from Context |  | + | + | + | + | + | + | + | + | + | + | + |
 | Set value for Context |  | + | + | + | + | + | + | + | + | + | + | + |
 | Attach Context |  | N/A | + | + | + | + | + | + | + | + | - | - |
 | Detach Context |  | N/A | + | + | + | + | + | + | + | + | - | - |
 | Get current Context |  | N/A | + | + | + | + | + | + | + | + | + | + |
-| Propagators |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| Propagators | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | Composite Propagator |  | + | + | + | + | + | + | + | + | + | + | + |
 | Global Propagator |  | + | + | + | + | + | + | + | + | + | + | + |
 | TraceContext Propagator |  | + | + | + | + | + | + | + | + | + | + | + |
@@ -198,7 +198,7 @@ language implementation.
 
 | Feature | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 |-------|--------|---|----|---|------|----|------|---|----|---|----|-----|
-| [Declarative Configuration](specification/configuration/README.md#declarative-configuration) 🚧 |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [Declarative Configuration](specification/configuration/README.md#declarative-configuration) 🚧 | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | `Parse` a configuration file 🚧 |  |  | 🧪 |  |  |  |  |  |  |  |  |  |
 | The `Parse` operation accepts the configuration YAML file format 🚧 |  |  | 🧪 |  |  |  |  |  |  |  |  |  |
 | The `Parse` operation performs environment variable substitution 🚧 |  |  | 🧪 |  |  |  |  |  |  |  |  |  |
@@ -208,17 +208,17 @@ language implementation.
 
 | Feature | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 |-------|--------|---|----|---|------|----|------|---|----|---|----|-----|
-| [OTLP Exporters](specification/protocol/otlp.md) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [OTLP Exporters](specification/protocol/otlp.md) | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | OTLP/gRPC Exporter |  | + | + | + | + |  | + | + | + | + | + | + |
 | OTLP/HTTP binary Protobuf Exporter |  | + | + | + | + | + | + | + | + | + | + | - |
 | OTLP/HTTP JSON Protobuf Exporter |  | + | - | + |  |  | - | + |  | + | - | - |
 | OTLP/HTTP gzip Content-Encoding support | X | + | + | + | + | + | - | + |  | - | - | - |
-| [Zipkin Exporters](specification/trace/sdk_exporters/zipkin.md) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [Zipkin Exporters](specification/trace/sdk_exporters/zipkin.md) | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | Zipkin V1 JSON | X | - | + |  | + | - | - | - | - | - | - | - |
 | Zipkin V1 Thrift | X | - | + |  |  | - | - | - | - | - | - | - |
 | Zipkin V2 JSON |  | + | + |  | + | + | - | + | + | + | + | + |
 | Zipkin V2 Protobuf |  | - | + |  | + | - | + | - | - | - | - | - |
-| Prometheus Exporters |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| Prometheus Exporters | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | [Metadata Deduplication](specification/compatibility/prometheus_and_openmetrics.md#metric-metadata-1) |  | + | + | - | - | - | - | - | + | - | - | - |
 | [Name Sanitization](specification/compatibility/prometheus_and_openmetrics.md#metric-metadata-1) |  | + | + | + | + | - | - | - | + | + | + | + |
 
@@ -226,10 +226,10 @@ language implementation.
 
 | Feature | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 |-------|--------|---|----|---|------|----|------|---|----|---|----|-----|
-| [OpenCensus Compatibility](specification/compatibility/opencensus.md) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [OpenCensus Compatibility](specification/compatibility/opencensus.md) | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | [Trace Bridge](specification/compatibility/opencensus.md#trace-bridge) |  |  | + | + | + |  | - |  |  | - | - |  |
 | [Metric Bridge](specification/compatibility/opencensus.md#metrics--stats) |  |  | + | - | - |  | - |  |  | - | - |  |
-| [OpenTracing Compatibility](specification/compatibility/opentracing.md) |  | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
+| [OpenTracing Compatibility](specification/compatibility/opentracing.md) | Optional | Go | Java | JS | Python | Ruby | Erlang | PHP | Rust | C++ | .NET | Swift |
 | [Create OpenTracing Shim](specification/compatibility/opentracing.md#create-an-opentracing-tracer-shim) |  |  |  |  |  |  |  | + |  |  |  |  |
 | [Tracer](specification/compatibility/opentracing.md#tracer-shim) |  |  |  |  |  |  |  | + |  |  |  |  |
 | [Span](specification/compatibility/opentracing.md#span-shim) |  | + |  |  |  |  | + | + |  |  |  |  |
