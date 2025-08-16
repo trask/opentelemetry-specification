@@ -167,7 +167,11 @@ class ComplianceMatrixGenerator:
         
         # Table header
         header = "| Feature | Optional | " + " | ".join(languages) + " |"
-        separator = "|" + "|".join(["-" * max(len(col), 3) for col in ["Feature", "Optional"] + languages]) + "|"
+        # Create separator with original formatting - very long dashes for Feature column
+        feature_dashes = "-" * 98  # Match original length
+        optional_dashes = "-" * 10
+        lang_dashes = ["-" * max(len(lang), 5) for lang in languages]
+        separator = f"|{feature_dashes}|{optional_dashes}|" + "|".join(lang_dashes) + "|"
         
         output.extend([header, separator])
         
@@ -222,18 +226,14 @@ class ComplianceMatrixGenerator:
         output.append("The following tables show which features are implemented by each OpenTelemetry")
         output.append("language implementation.\n")
         
-        output.append("## Legend\n")
-        output.append("### Implementation Status\n")
-        output.append("- `+` means the feature is supported and stable in the language implementation")
-        output.append("- `-` means the feature is not supported")
-        output.append("- `🧪` means the feature has experimental support in the language implementation")
-        output.append("- `N/A` means the feature is not applicable to the particular language")
-        output.append("- blank cell means the status of the feature is not known\n")
+        output.append("`+` means the feature is supported, `-` means it is not supported, `N/A` means")
+        output.append("the feature is not applicable to the particular language, blank cell means the")
+        output.append("status of the feature is not known.\n")
         
-        output.append("### Specification Status\n")
-        output.append("- Features marked with `🚧` are experimental in the specification")
-        output.append("- Features marked with `⚠️` are deprecated in the specification")
-        output.append("- Features with no symbol are stable in the specification\n")
+        output.append("For the `Optional` column, `X` means the feature is optional, blank means the")
+        output.append("feature is required, and columns marked with `*` mean that for each type of")
+        output.append("exporter (OTLP and Zipkin), implementing at least one of the supported")
+        output.append("formats is required. Implementing more than one format is optional.\n")
         
         # Generate matrix for each category
         for category_id in self.spec_categories:
