@@ -21,7 +21,7 @@ features:
   create_root_span: stable
   create_with_default_parent: stable
   create_with_parent_from_context: stable
-  no_explicit_parent_allowed: unknown
+  no_explicit_parent_allowed: stable
   span_processor_onstart_receives_parent_context: not_supported
   update_name: stable
   user_defined_start_timestamp: stable

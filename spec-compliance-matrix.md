@@ -49,7 +49,7 @@ language implementation.
 | Create root span |  | + | + | + | + | + | + | + | + | + | + | + |
 | Create with default parent (active span) |  | N/A | + | + | + | + | + | + | + | + | + | + |
 | Create with parent from Context |  | + | + | + | + | + | + | + | + | + | + | + |
-| No explicit parent Span/SpanContext allowed |  | + |  |  |  |  | + | + |  |  |  |  |
+| No explicit parent Span/SpanContext allowed |  | + | + | + | + | + | + | + | + | + | - | + |
 | SpanProcessor.OnStart receives parent Context |  | + | + | + | + | + | + | + | + | - | - | + |
 | UpdateName |  | + | + | + | + | + | + | + | + | + | + | + |
 | User-defined start timestamp |  | + | + | + | + | + | + | + | + | + | + | + |
